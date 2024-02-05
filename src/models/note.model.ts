@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { INote } from '../../types';
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const noteSchema = new mongoose.Schema({
@@ -31,6 +32,6 @@ noteSchema.plugin(AutoIncrement, {
     start_seq: 500
 })
 
-const Note = mongoose.model("note", noteSchema);
+const Note = mongoose.model<INote>("note", noteSchema);
 
 export default Note;

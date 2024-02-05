@@ -8,6 +8,7 @@ import mongoose from "mongoose";
 import corsOptions from "./config/corsOptions";
 import rootRoutes from "./routes/root.route";
 import userRoutes from "./routes/user.route";
+import noteRoutes from "./routes/note.route";
 import { logger } from "./middlewares/logger";
 import errorHandler from "./middlewares/errorHandler";
 import connectDB from "./config/dbConnection";
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Routes
 app.use("/", rootRoutes);
 app.use("/users", userRoutes);
+app.use("/notes", noteRoutes);
 
 // Not Found Route
 app.all('*', (req: express.Request, res: express.Response) => {

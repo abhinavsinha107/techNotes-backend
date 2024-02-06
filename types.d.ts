@@ -5,3 +5,10 @@ export interface IUser {
     roles: string[];
     active?: boolean;
 }
+
+export interface INote {
+    user: IUser;
+    title: string;
+    text: string;
+    completed: boolean;
+}
